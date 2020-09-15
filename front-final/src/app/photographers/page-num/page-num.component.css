@@ -1,13 +1,22 @@
-i{
+.nx{
     padding-right: 2rem;
     padding-left: 2rem;
     color: rgb(199, 153, 4);
 }
-i:hover{
+.nx:hover{
     transition: 0.3ms;
     color: rgb(82, 88, 88);
 }
 
+.custI{
+    color:rgb(82, 88, 88);
+}
+
+.custI:hover{
+    transition: 0.3ms;
+    color:rgb(199, 153, 4);
+    pointer-events: visibleStroke;
+}
 
 
 .pageNo{
