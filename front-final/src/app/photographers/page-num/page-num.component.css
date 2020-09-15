@@ -1,0 +1,19 @@
+i{
+    padding-right: 2rem;
+    padding-left: 2rem;
+    color: rgb(199, 153, 4);
+}
+i:hover{
+    transition: 0.3ms;
+    color: rgb(82, 88, 88);
+}
+
+
+
+.pageNo{
+    padding-left: 28rem;
+    justify-content: center;
+    align-items: center;
+    color: rgb(82, 88, 88);
+}
+
