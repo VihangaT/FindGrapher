@@ -33,6 +33,7 @@ import { TravelPhotographerComponent } from './photographers/travel-photographer
 import { EditProfileComponent } from './profile/edit-profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ViewProfileComponent} from './profile/view-profile.component';
+import { PageNumComponent } from './photographers/page-num/page-num.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import {ViewProfileComponent} from './profile/view-profile.component';
     ArchiPhotographerComponent,
     TravelPhotographerComponent,
     EditProfileComponent,
-    ViewProfileComponent
+    ViewProfileComponent,
+    PageNumComponent
   ],
   imports: [
     NgbModule,
