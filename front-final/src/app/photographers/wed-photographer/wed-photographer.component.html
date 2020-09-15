@@ -1,0 +1,38 @@
+<div class="profile-container container">
+
+  <div *ngFor="let photographer of photographers; let i = index"  [routerLink]="['/pro-profile', i]" routerLinkActive="active">
+    <div *ngIf="photographer.specialityField1 ==='true'" class="profile alert alert-warning">
+      <p>Name - <span class="badge-warning font-weight-light" style="color: #333333">{{photographer.firstName}} {{photographer.lastName}}</span></p>
+      <p class="font-weight-bold">Interest Fields - <span class=" badge-warning">
+        {{photographer.specialityField1 ==="true" ? "  Wedding-Photography " : "  "}}
+      {{photographer.specialityField2 ==="true" ? "   Event-Photography  " : "  "}}
+      {{photographer.specialityField3 ==="true" ? "  Model-Photography  " : "  "}}
+      {{photographer.specialityField4 ==="true" ? "  Product-Photography  " : "  "}}
+      {{photographer.specialityField5 ==="true" ? "  Fashion-Photography  " : "  "}}
+      {{photographer.specialityField6 ==="true" ? "  Sports-Photography  " : "  "}}
+      {{photographer.specialityField7 ==="true" ? "  Architectural-Photography  " : "  "}}
+      {{photographer.specialityField8 ==="true" ? "  Travel-Photography  " : "  "}}
+      </span></p>
+      <br>
+
+      <div class="post-image">
+        <img [src]="photographer.imgUrl1" [alt]="photographer.firstName">
+      </div>
+      <div class="post-image">
+        <img [src]="photographer.imgUrl2" [alt]="photographer.firstName">
+      </div>
+      <div class="post-image">
+        <img [src]="photographer.imgUrl3" [alt]="photographer.firstName">
+      </div>
+      <div class="post-image">
+        <img [src]="photographer.imgUrl4" [alt]="photographer.firstName">
+      </div>
+      <div class="post-image">
+        <img [src]="photographer.imgUrl5" [alt]="photographer.firstName">
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

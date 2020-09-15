@@ -1,0 +1,6 @@
+.error{
+  text-align: center;
+  color:red;padding:10px;
+  background-color: rgb(226, 169, 169);
+  border: 1px red solid;
+}

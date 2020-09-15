@@ -1,0 +1,115 @@
+<div class="row justify-content-center text-center p-5">
+  <button *ngIf="photographerLoggedIn" class="btn custom-button btn-outline-success mr-3" routerLinkActive='active' [routerLink]="['/view-profile']">Cancel Editing</button>
+</div>
+<div class="profile-container container  alert-warning">
+  <br>
+  <p class="h4 text-center">Edit your Profile</p>
+  <div>
+    <form [formGroup]="photographerUpdating" (ngSubmit)="onSubmit()">
+      <div class="wrapper">
+        <hr>
+        <div class="titile"></div>
+        <div class="form">
+          <div class="input-field">
+            <label>First Name</label>
+            <input type="text" name="name" class="input" formControlName="firstName" />
+          </div>
+
+          <div class="input-field">
+            <label>Last Name</label>
+            <input type="text" name="name" class="input" formControlName="lastName" />
+          </div>
+          <div class="input-field">
+            <label>Country</label>
+            <input type="text" class="input" formControlName="country" name="country" />
+          </div>
+          <div class="input-field">
+            <label>City</label>
+            <input type="text" name="city" class="input" formControlName="city" />
+          </div>
+          <div class="input-field">
+            <label>Contact No</label>
+            <input type="text" class="input" name="contactNo" formControlName="contactNo" />
+          </div>
+
+          <div class="input-field">
+            <label>Gender</label>
+            <div class="custom_select">
+              <select formControlName="gender">
+                <option value="" selected disabled></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <label>Speciality</label>
+            <div class="checkBoxes" formGroupName="speciality">
+              <input type="checkbox" name="speciality" id="1" formControlName="1"
+                     [checked]="this.fetchedPhotographer.specialityField1 ==='true'"> Wedding Photography <br />
+              <input type="checkbox" name="speciality" id="2" formControlName="2"
+                     [checked]="this.fetchedPhotographer.specialityField2 ==='true'"> Event Photography <br />
+              <input type="checkbox" name="speciality" id="3" formControlName="3"
+                     [checked]="this.fetchedPhotographer.specialityField3 ==='true'"> Model Photography<br />
+              <input type="checkbox" name="speciality" id="4" formControlName="4"
+                     [checked]="this.fetchedPhotographer.specialityField4 ==='true'"> Product Photography <br />
+              <input type="checkbox" name="speciality" id="5" formControlName="5"
+                     [checked]="this.fetchedPhotographer.specialityField5 ==='true'"> Fashion Photography<br />
+              <input type="checkbox" name="speciality" id="6" formControlName="6"
+                     [checked]="this.fetchedPhotographer.specialityField6 ==='true'"> Sports Photography <br />
+              <input type="checkbox" name="speciality" id="7" formControlName="7"
+                     [checked]="this.fetchedPhotographer.specialityField7 ==='true'"> Architectural Photography <br />
+              <input type="checkbox" name="speciality" id="8" formControlName="8"
+                     [checked]="this.fetchedPhotographer.specialityField8 ==='true'"> Travel Photography <br />
+            </div>
+          </div>
+
+
+          <label style="color: aliceblue;">Choose Galary</label>
+          <br>
+          <hr><br>
+
+          <div style="text-align: center">
+            <div class="imgUploaderContainer">
+              <button type="button" (click)="filePicker1.click()"
+                      class="imgUploader">{{imagePreview[0]==''? "Pick Image" : "Image Added"}}</button>
+              <input type="file" #filePicker1 (change)="onImagePicked($event,1)" hidden>
+            </div>
+            <div class="imgUploaderContainer">
+              <button type="button" (click)="filePicker2.click()"
+                      class="imgUploader">{{imagePreview[1]==''? "Pick Image" : "Image Added"}}</button>
+              <input type="file" #filePicker2 (change)="onImagePicked($event,2)" hidden>
+            </div>
+            <div class="imgUploaderContainer">
+              <button type="button" (click)="filePicker3.click()"
+                      class="imgUploader">{{imagePreview[2]==''? "Pick Image" : "Image Added"}}</button>
+              <input type="file" #filePicker3 (change)="onImagePicked($event,3)" hidden>
+            </div>
+            <div class="imgUploaderContainer">
+              <button type="button" (click)="filePicker4.click()"
+                      class="imgUploader">{{imagePreview[3]==''? "Pick Image" : "Image Added"}}</button>
+              <input type="file" #filePicker4 (change)="onImagePicked($event,4)" hidden>
+            </div>
+            <div class="imgUploaderContainer">
+              <button type="button" (click)="filePicker5.click()"
+                      class="imgUploader">{{imagePreview[4]==''? "Pick Image" : "Image Added"}}</button>
+              <input type="file" #filePicker5 (change)="onImagePicked($event,5)" hidden>
+            </div>
+          </div>
+          <br>
+          <div class="input_field">
+            <input type="submit" value="Update Details" class="btn" />
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+
+
+  </div>
+
+
+  <br>
+</div>

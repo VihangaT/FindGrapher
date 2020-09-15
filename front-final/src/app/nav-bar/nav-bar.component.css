@@ -1,0 +1,33 @@
+.nav-link {
+    font-size: large;
+    color: #000;
+  }
+
+.log-button
+{
+  width: 120px !important;
+  height: 50px !important;
+  font-size: 17px !important;
+}
+ .main-nav-container {
+   z-index: 100;
+   min-height: 100px;
+   width: 100% !important;
+   margin: 0 !important;
+   padding: 0 !important;
+ }
+
+  .logoClass{
+    max-width: 20rem;
+    max-height:3rem;
+    padding-left: 0rem;
+}
+
+.custnav{
+  background-color: burlywood;
+}
+
+.navbar{
+  position: fixed;
+  width: 100%
+}

@@ -1,0 +1,163 @@
+<div *ngIf="editMode">
+  <br>
+  <div class="profile-container container  alert-warning">
+    <br>
+    <p class="h4 text-center">Your Profile Details</p>
+    <button style="float:right" type="button" (click)="editDetails()">Edit Details</button><br>
+    <div>
+      <p><span>Name </span>-<span class="badge-warning"> {{fetchedPhotographer.firstName}}
+          {{fetchedPhotographer.lastName}}</span></p>
+      <p><span>Gender </span>-<span class="badge-warning"> {{fetchedPhotographer.gender}}</span></p>
+      <p><span>E-mail</span>-<span class="badge-warning">{{fetchedPhotographer.email}}</span></p>
+      <p><span>ContactNo</span>-<span class="badge-warning"> {{fetchedPhotographer.contactNo}}</span></p>
+      <p><span>City</span>-<span class="badge-warning"> {{fetchedPhotographer.city}}</span></p>
+      <p><span>Country</span>-<span class="badge-warning"> {{fetchedPhotographer.country}}</span></p>
+      <p>Interest Fields</p>
+      <p class="badge-warning"> {{fetchedPhotographer.specialityField1 ==="true" ? "  Wedding-Photography " : "  "}}</p>
+      <p class="badge-warning">{{fetchedPhotographer.specialityField2 ==="true" ? "   Event-Photography  " : "  "}}</p>
+      <p class="badge-warning"> {{fetchedPhotographer.specialityField3 ==="true" ? "  Model-Photography  " : "  "}}</p>
+      <p class="badge-warning">{{fetchedPhotographer.specialityField4 ==="true" ? "  Product-Photography  " : "  "}}</p>
+      <p class="badge-warning">{{fetchedPhotographer.specialityField5 ==="true" ? "  Fashion-Photography  " : "  "}}</p>
+      <p class="badge-warning">{{fetchedPhotographer.specialityField6 ==="true" ? "  Sports-Photography  " : "  "}}</p>
+      <p class="badge-warning">
+        {{fetchedPhotographer.specialityField7 ==="true" ? "  Architectural-Photography  " : "  "}}
+      </p>
+      <p class="badge-warning">{{fetchedPhotographer.specialityField8 ==="true" ? "  Travel-Photography  " : "  "}}</p>
+
+    </div>
+
+    <div class="post-image">
+      <img [src]="fetchedPhotographer.image1" [alt]="fetchedPhotographer.firstName">
+    </div>
+    <div class="post-image">
+      <img [src]="fetchedPhotographer.image2" [alt]="fetchedPhotographer.firstName">
+    </div>
+    <div class="post-image">
+      <img [src]="fetchedPhotographer.image3" [alt]="fetchedPhotographer.firstName">
+    </div>
+    <div class="post-image">
+      <img [src]="fetchedPhotographer.image4" [alt]="fetchedPhotographer.firstName">
+    </div>
+    <div class="post-image">
+      <img [src]="fetchedPhotographer.image5" [alt]="fetchedPhotographer.firstName">
+    </div>
+    <br>
+  </div>
+</div>
+<br>
+
+
+
+<div class="profile-container container  alert-warning" *ngIf="!editMode">
+  <br>
+  <p class="h4 text-center">Edit your Profile</p>
+  <div>
+    <form [formGroup]="photographerUpdating" #photographerForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="wrapper">
+        <button style="float:right" type="button" (click)="editDetails()">Cancel Editing</button><br>
+        <hr>
+        <div class="titile"></div>
+        <div class="form">
+          <div class="input-field">
+            <label>First Name</label>
+            <input type="text" name="name" class="input" formControlName="firstName" />
+          </div>
+
+          <div class="input-field">
+            <label>Last Name</label>
+            <input type="text" name="name" class="input" formControlName="lastName" />
+          </div>
+          <div class="input-field">
+            <label>Country</label>
+            <input type="text" class="input" formControlName="country" name="country" />
+          </div>
+          <div class="input-field">
+            <label>City</label>
+            <input type="text" name="city" class="input" formControlName="city" />
+          </div>
+          <div class="input-field">
+            <label>Contact No</label>
+            <input type="text" class="input" name="contactNo" formControlName="contactNo" />
+          </div>
+
+          <div class="input-field">
+            <label>Gender</label>
+            <div class="custom_select">
+              <select formControlName="gender">
+                <option value="" selected disabled></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <label>Speciality</label>
+            <div class="checkBoxes" formGroupName="speciality">
+              <input type="checkbox" name="speciality" id="1" formControlName="1"
+                [checked]="this.fetchedPhotographer.specialityField1 ==='true'"> Wedding Photography <br />
+              <input type="checkbox" name="speciality" id="2" formControlName="2"
+                [checked]="this.fetchedPhotographer.specialityField2 ==='true'"> Event Photography <br />
+              <input type="checkbox" name="speciality" id="3" formControlName="3"
+                [checked]="this.fetchedPhotographer.specialityField3 ==='true'"> Model Photography<br />
+              <input type="checkbox" name="speciality" id="4" formControlName="4"
+                [checked]="this.fetchedPhotographer.specialityField4 ==='true'"> Product Photography <br />
+              <input type="checkbox" name="speciality" id="5" formControlName="5"
+                [checked]="this.fetchedPhotographer.specialityField5 ==='true'"> Fashion Photography<br />
+              <input type="checkbox" name="speciality" id="6" formControlName="6"
+                [checked]="this.fetchedPhotographer.specialityField6 ==='true'"> Sports Photography <br />
+              <input type="checkbox" name="speciality" id="7" formControlName="7"
+                [checked]="this.fetchedPhotographer.specialityField7 ==='true'"> Architectural Photography <br />
+              <input type="checkbox" name="speciality" id="8" formControlName="8"
+                [checked]="this.fetchedPhotographer.specialityField8 ==='true'"> Travel Photography <br />
+            </div>
+          </div>
+
+
+          <label style="color: aliceblue;">Choose Galary</label>
+          <br>
+          <hr><br>
+
+          <div style="text-align: center">
+            <div class="imgUploaderContainer">
+              <button type="button" (click)="filePicker1.click()"
+                class="imgUploader">{{imagePreview[0]==''? "Pick Image" : "Image Added"}}</button>
+              <input type="file" #filePicker1 (change)="onImagePicked($event,1)" hidden>
+            </div>
+            <div class="imgUploaderContainer">
+              <button type="button" (click)="filePicker2.click()"
+                class="imgUploader">{{imagePreview[1]==''? "Pick Image" : "Image Added"}}</button>
+              <input type="file" #filePicker2 (change)="onImagePicked($event,2)" hidden>
+            </div>
+            <div class="imgUploaderContainer">
+              <button type="button" (click)="filePicker3.click()"
+                class="imgUploader">{{imagePreview[2]==''? "Pick Image" : "Image Added"}}</button>
+              <input type="file" #filePicker3 (change)="onImagePicked($event,3)" hidden>
+            </div>
+            <div class="imgUploaderContainer">
+              <button type="button" (click)="filePicker4.click()"
+                class="imgUploader">{{imagePreview[3]==''? "Pick Image" : "Image Added"}}</button>
+              <input type="file" #filePicker4 (change)="onImagePicked($event,4)" hidden>
+            </div>
+            <div class="imgUploaderContainer">
+              <button type="button" (click)="filePicker5.click()"
+                class="imgUploader">{{imagePreview[4]==''? "Pick Image" : "Image Added"}}</button>
+              <input type="file" #filePicker5 (change)="onImagePicked($event,5)" hidden>
+            </div>
+          </div>
+          <br>
+          <div class="input_field">
+            <input type="submit" value="Update Details" class="btn" />
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+
+
+  </div>
+
+
+  <br>
+</div>

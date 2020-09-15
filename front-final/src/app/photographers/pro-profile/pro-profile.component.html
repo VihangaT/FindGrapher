@@ -1,0 +1,63 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Contact</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Are you sure, you want to send an email?
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="onSendEmail()">YES</button>
+  </div>
+</ng-template>
+<div class="row justify-content-center mt-5 mb-5">
+  <button class="btn btn-info" *ngIf="this.isUser" (click)="open(content)">SEND EMAIL</button>
+</div>
+
+
+<div class="profile-container container  alert-warning">
+  <br>
+  <div class="row justify-content-center text-center mt-2 mb-5">
+
+  </div>
+
+  <p class="h4 text-center">Photographer Details</p>
+<div>
+  <p><span >Name </span>-<span class="badge-warning"> {{photographers[id].firstName}} {{photographers[id].lastName}}</span></p>
+  <p><span >Gender </span>-<span class="badge-warning"> {{photographers[id].gender}}</span></p>
+  <p><span >E-mail</span>-<span class="badge-warning">{{photographers[id].email}}</span></p>
+  <p><span >ContactNo</span>-<span class="badge-warning"> {{photographers[id].contactNo}}</span></p>
+  <p><span >City</span>-<span class="badge-warning"> {{photographers[id].city}}</span></p>
+  <p><span >Country</span>-<span class="badge-warning"> {{photographers[id].country}}</span></p>
+  <p>Interest Fields</p>
+  <p class="badge-warning"> {{photographers[id].specialityField1 ==="true" ? "  Wedding-Photography " : "  "}}</p>
+  <p class="badge-warning">{{photographers[id].specialityField2 ==="true" ? "   Event-Photography  " : "  "}}</p>
+  <p class="badge-warning"> {{photographers[id].specialityField3 ==="true" ? "  Model-Photography  " : "  "}}</p>
+  <p class="badge-warning">{{photographers[id].specialityField4 ==="true" ? "  Product-Photography  " : "  "}}</p>
+  <p class="badge-warning">{{photographers[id].specialityField5 ==="true" ? "  Fashion-Photography  " : "  "}}</p>
+  <p class="badge-warning">{{photographers[id].specialityField6 ==="true" ? "  Sports-Photography  " : "  "}}</p>
+  <p class="badge-warning">{{photographers[id].specialityField7 ==="true" ? "  Architectural-Photography  " : "  "}}</p>
+  <p class="badge-warning">{{photographers[id].specialityField8 ==="true" ? "  Travel-Photography  " : "  "}}</p>
+
+</div>
+
+  <div class="post-image">
+  <img [src]="photographers[id].imgUrl1" [alt]="photographers[id].firstName">
+</div>
+  <div class="post-image">
+    <img [src]="photographers[id].imgUrl2" [alt]="photographers[id].firstName">
+  </div>
+  <div class="post-image">
+    <img [src]="photographers[id].imgUrl3" [alt]="photographers[id].firstName">
+  </div>
+  <div class="post-image">
+    <img [src]="photographers[id].imgUrl4" [alt]="photographers[id].firstName">
+  </div>
+  <div class="post-image">
+    <img [src]="photographers[id].imgUrl5" [alt]="photographers[id].firstName">
+  </div>
+  <br>
+</div>
+

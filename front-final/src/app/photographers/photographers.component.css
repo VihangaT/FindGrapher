@@ -1,0 +1,27 @@
+
+.info-text {
+  text-align: center;
+}
+
+.post-image {
+  width: 200px;
+  display: inline-block;
+}
+
+.post-image img {
+  width: 90%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+}
+
+.profile{
+  width: 100%;
+border: 1px solid black;
+padding: 10px;
+margin-bottom: 10px;
+}
+
+.profile:hover{
+  background-color: rgb(199, 153, 4);
+  cursor: pointer;
+}

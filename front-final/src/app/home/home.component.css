@@ -1,0 +1,33 @@
+.imgbanner{
+    padding-left: 0% !important;
+    padding-right: 0% !important;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+    max-width: 100%;
+}
+
+
+.divImg {
+    position: relative;
+    
+  }
+  
+.divImg .btn {
+    position: absolute;
+    top: 48%;
+    left: 7.5%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #80C047;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .divImg .btn:hover {
+    background-color: #B4D499;
+  }

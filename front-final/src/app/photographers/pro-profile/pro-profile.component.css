@@ -1,0 +1,26 @@
+.profile{
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-backdrop.fade
+{
+  opacity: 0.5;
+}
+.modal-open .modal
+{
+  opacity: 1;
+}
+
+.post-image {
+  width: 250px;
+  display: inline-block;
+}
+
+.post-image img {
+  width: 90%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+}

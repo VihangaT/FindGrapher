@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "../node_modules/font-awesome/css/font-awesome.css";
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Poiret+One&family=Poppins:ital,wght@1,700&family=Skranji&display=swap');
+/* body{
+    background-color: rgb(21, 23, 24);
+} */
+html, body { height: 100%; }
+body { margin: 0; font-family: "Poppins", sans-serif;
+     /* background-color: rgb(21, 23, 24); */
+    }

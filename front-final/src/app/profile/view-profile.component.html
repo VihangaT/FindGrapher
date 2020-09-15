@@ -1,0 +1,54 @@
+<div>
+  <br>
+  <div class="row justify-content-center text-center">
+    <button *ngIf="photographerLoggedIn" class="btn custom-button btn-outline-success" [routerLink]="['/profile']">Edit Profile</button>
+  </div>
+  <div class="profile-container container  alert-warning">
+    <br>
+    <p class="h4 text-center">Your Profile Details</p>
+    <div>
+      <p><span>Name </span>-<span class="badge-warning"> {{fetchedPhotographer.firstName}}
+        {{fetchedPhotographer.lastName}}</span></p>
+      <p><span>Gender </span>-<span class="badge-warning"> {{fetchedPhotographer.gender}}</span></p>
+      <p><span>E-mail</span>-<span class="badge-warning">{{fetchedPhotographer.email}}</span></p>
+      <p><span>ContactNo</span>-<span class="badge-warning"> {{fetchedPhotographer.contactNo}}</span></p>
+      <p><span>City</span>-<span class="badge-warning"> {{fetchedPhotographer.city}}</span></p>
+      <p><span>Country</span>-<span class="badge-warning"> {{fetchedPhotographer.country}}</span></p>
+      <p>Interest Fields</p>
+      <p class="badge-warning"> {{fetchedPhotographer.specialityField1 ==="true" ? "  Wedding-Photography " : "  "}}</p>
+      <p class="badge-warning">{{fetchedPhotographer.specialityField2 ==="true" ? "   Event-Photography  " : "  "}}</p>
+      <p class="badge-warning"> {{fetchedPhotographer.specialityField3 ==="true" ? "  Model-Photography  " : "  "}}</p>
+      <p class="badge-warning">{{fetchedPhotographer.specialityField4 ==="true" ? "  Product-Photography  " : "  "}}</p>
+      <p class="badge-warning">{{fetchedPhotographer.specialityField5 ==="true" ? "  Fashion-Photography  " : "  "}}</p>
+      <p class="badge-warning">{{fetchedPhotographer.specialityField6 ==="true" ? "  Sports-Photography  " : "  "}}</p>
+      <p class="badge-warning">
+        {{fetchedPhotographer.specialityField7 ==="true" ? "  Architectural-Photography  " : "  "}}
+      </p>
+      <p class="badge-warning">{{fetchedPhotographer.specialityField8 ==="true" ? "  Travel-Photography  " : "  "}}</p>
+
+    </div>
+
+    <div class="post-image">
+      <img [src]="fetchedPhotographer.image1" [alt]="fetchedPhotographer.firstName">
+    </div>
+    <div class="post-image">
+      <img [src]="fetchedPhotographer.image2" [alt]="fetchedPhotographer.firstName">
+    </div>
+    <div class="post-image">
+      <img [src]="fetchedPhotographer.image3" [alt]="fetchedPhotographer.firstName">
+    </div>
+    <div class="post-image">
+      <img [src]="fetchedPhotographer.image4" [alt]="fetchedPhotographer.firstName">
+    </div>
+    <div class="post-image">
+      <img [src]="fetchedPhotographer.image5" [alt]="fetchedPhotographer.firstName">
+    </div>
+    <br>
+    <br>
+
+  </div>
+
+</div>
+<br>
+
+

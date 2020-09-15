@@ -1,0 +1,11 @@
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="divImg">
+        <img class="imgbanner" src="../../assets/Images/nav/FindGrapher header.png">
+        <button type="button"  *ngIf="!photographerLoggedIn && !userLoggedIn" routerLinkActive='active' [routerLink]="['/register/user-register']" class="Custbtn btn btn-success m-2" >Register</button>
+      </div>
+      <app-intro></app-intro>
+    </div>
+  </div>
+

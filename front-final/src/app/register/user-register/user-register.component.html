@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+</head>
+
+<body>
+
+<form [formGroup]="userSignUp" #userForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="wrapper">
+
+    <div class="shadow-none p-3 mb-5 bg-light rounded text-center">User Registration</div>
+
+    <div class="titile"></div>
+    <div class="form">
+      <div class="input-field">
+        <label>Name</label>
+        <input type="text" name="name" class="input" formControlName="name"/>
+      </div>
+
+      <div class="input-field">
+        <label>Country</label>
+        <input type="text" class="input" formControlName="country"  name="country"/>
+      </div>
+      <div class="input-field">
+        <label>City</label>
+        <input type="text" name="city"  class="input" formControlName="city"/>
+      </div>
+      <div class="input-field">
+        <label>Contact No</label>
+        <input type="text" class="input" name="contactNo"  formControlName="contactNo"/>
+      </div>
+      <div class="input-field">
+        <label>Email</label>
+        <input type="text" class="input" name="email"  formControlName="email"/>
+      </div>
+      <div class="input-field">
+        <label>Password</label>
+        <input type="Password" class="input" name="password"  #pass formControlName="password"/>
+      </div>
+      <div class="input-field">
+        <label>Confirm Password</label>
+        <input type="Password" class="input"  #Cpass (keyup)="passwordValidator(pass.value,Cpass.value)" formControlName="confirmPassword"/>
+        {{passwordMessage}}
+      </div>
+
+      <div class="input-field">
+        <label>Gender</label>
+        <div class="custom_select">
+          <select formControlName="gender">
+            <option value="" selected disabled ></option>
+            <option value="male" >Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-field terms">
+        <label class="check">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
+        <p>Agreed to the Terms and Conditions</p>
+      </div>
+      <div class="input_field">
+        <input type="submit" value="Register" class="btn" />
+      </div>
+    </div>
+
+  </div>
+</form>
+
+</body>
+</html>
+
