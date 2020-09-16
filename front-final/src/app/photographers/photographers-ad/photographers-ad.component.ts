@@ -7,12 +7,13 @@ import { AdProtographersService } from "./ad-protographers.service";
   styleUrls: ["./photographers-ad.component.css"],
 })
 export class PhotographersAdComponent implements OnInit {
-  pageTitle: string = "Product List!";
+  pageTitle: string = 'Scraped Photographers List!';
   imgWidth: number = 50;
   imgMargin: number = 2;
   showImage: boolean = false;
   errorMessage: string;
 
+  // tslint:disable-next-line: variable-name
   _listfilter: string;
   get listfilter(): string {
     return this._listfilter;
@@ -25,11 +26,13 @@ export class PhotographersAdComponent implements OnInit {
       : this.products;
   }
   onRatingClicked(message: string): void {
-    this.pageTitle = "product List:" + message;
+    this.pageTitle = 'Scraped Photographers List:' + message;
   }
 
+  // tslint:disable-next-line: member-ordering
   filteredProducts: IphotographerAdv[];
 
+  // tslint:disable-next-line: member-ordering
   products: IphotographerAdv[] = [];
   toggleImage(): void {
     this.showImage = !this.showImage;
@@ -40,7 +43,8 @@ export class PhotographersAdComponent implements OnInit {
     filterBY = filterBY.toLocaleLowerCase();
     return this.products.filter(
       (prod: IphotographerAdv) =>
-        prod.productName.toLocaleLowerCase().indexOf(filterBY) !== -1
+        prod.country.toLocaleLowerCase().indexOf(filterBY) !== -1 ||
+        prod.specialityField.toLocaleLowerCase().indexOf(filterBY) !== -1
     );
   }
 

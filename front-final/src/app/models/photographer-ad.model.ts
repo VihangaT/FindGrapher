@@ -1,6 +1,6 @@
 export interface IphotographerAdv {
+  photographerId: number;
   Name: string;
-  location: string;
   specialityField: string;
   country: string;
   email: string;
@@ -8,4 +8,5 @@ export interface IphotographerAdv {
   gender: string;
   contactNo: string;
   imgUrl: string;
+  starRating: number;
 }
