@@ -8,7 +8,7 @@ import {IphotographerAdv} from '../../models/photographer-ad.model';
   providedIn: 'root'
 })
 export class AdProtographersService {
-  private ScrapedDataURL='api/products/products.json';
+  private ScrapedDataURL='../../assets/Images/AdvancePhotographers.json';
   constructor(private http:HttpClient) { }
 
   getProducts():Observable<IphotographerAdv[]>{
@@ -23,7 +23,7 @@ private handleError(err:HttpErrorResponse){
   if(err.error instanceof ErrorEvent){
     errorMessage='An error occured: $(err.error.message)';
   }else{
-    errorMessage='Server returned code: $(err.status), error message is: $(err.message)';
+    errorMessage='Server returned code: $(err.status), error message is: $(err.message) ';
   }
   console.error(errorMessage);
   return throwError(errorMessage);

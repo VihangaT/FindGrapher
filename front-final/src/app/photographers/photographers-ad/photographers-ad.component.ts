@@ -1,16 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { IphotographerAdv } from "../../models/photographer-ad.model";
-import { AdProtographersService } from "./ad-protographers.service";
+import { Component, OnInit } from '@angular/core';
+import { IphotographerAdv } from '../../models/photographer-ad.model';
+import { AdProtographersService } from './ad-protographers.service';
 @Component({
-  selector: "app-photographers-ad",
-  templateUrl: "./photographers-ad.component.html",
-  styleUrls: ["./photographers-ad.component.css"],
+  selector: 'app-photographers-ad',
+  templateUrl: './photographers-ad.component.html',
+  styleUrls: ['./photographers-ad.component.css'],
 })
 export class PhotographersAdComponent implements OnInit {
   pageTitle: string = 'Scraped Photographers List!';
   imgWidth: number = 50;
   imgMargin: number = 2;
-  showImage: boolean = false;
+  showImage: boolean = true;
   errorMessage: string;
 
   // tslint:disable-next-line: variable-name
@@ -34,9 +34,7 @@ export class PhotographersAdComponent implements OnInit {
 
   // tslint:disable-next-line: member-ordering
   products: IphotographerAdv[] = [];
-  toggleImage(): void {
-    this.showImage = !this.showImage;
-  }
+ 
   constructor(private Service: AdProtographersService) {}
 
   performFilter(filterBY: string): IphotographerAdv[] {
