@@ -8,8 +8,14 @@
   <button class="btn btn-warning m-1 shadow rounded" routerLink="sports-photographers">Sports Photographers</button>
   <button class="btn btn-warning m-1 shadow rounded" routerLink="archi-photographers">Architectural Photographers</button>
   <button class="btn btn-warning m-1 shadow rounded"  routerLink="travel-photographers">Travel Photographers</button>
+  <button class="btn btn-success m-1 shadow rounded"  routerLink="advanced-photographers">Advanced Search</button>
 </div>
+
 
 <hr>
 <p *ngIf="!isLogeddIn" class="error">You need to LogIn first</p>
 <router-outlet></router-outlet>
+ <div *ngIf="isLogeddIn">
+  <app-page-num></app-page-num>
+ </div> 
+

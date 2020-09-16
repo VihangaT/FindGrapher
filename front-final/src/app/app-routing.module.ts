@@ -21,6 +21,7 @@ import { SportPhotographerComponent } from './photographers/sport-photographer/s
 import { ArchiPhotographerComponent } from './photographers/archi-photographer/archi-photographer.component';
 import { TravelPhotographerComponent } from './photographers/travel-photographer/travel-photographer.component';
 import {ViewProfileComponent} from './profile/view-profile.component';
+import { PhotographersAdComponent } from './photographers/photographers-ad/photographers-ad.component';
 
 const routes: Routes = [
 
@@ -41,7 +42,9 @@ const routes: Routes = [
     {path: 'fashion-photographers', component: FashionPhotographerComponent},
     {path: 'sports-photographers', component: SportPhotographerComponent},
     {path: 'archi-photographers', component: ArchiPhotographerComponent},
-    {path: 'travel-photographers', component: TravelPhotographerComponent}
+    {path: 'travel-photographers', component: TravelPhotographerComponent},
+    {path: 'advanced-photographers', component: PhotographersAdComponent}
+
   ]},
 
   {path: 'pro-profile/:id', component: ProProfileComponent},
