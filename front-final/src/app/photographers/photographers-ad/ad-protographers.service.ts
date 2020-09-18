@@ -11,7 +11,7 @@ export class AdProtographersService {
   private ScrapedDataURL='../../assets/Images/AdvancePhotographers.json';
   constructor(private http:HttpClient) { }
 
-  getProducts():Observable<IphotographerAdv[]>{
+  getPhotographers():Observable<IphotographerAdv[]>{
     return this.http.get<IphotographerAdv[]>(this.ScrapedDataURL).pipe(
       tap(data => console.log('All: '+JSON.stringify(data))),
       catchError(this.handleError)

@@ -14,35 +14,27 @@
         <h4>Filtered by: {{ listfilter }}</h4>
       </div>
     </div>
-    <div class="table-responsive" *ngIf="products && products.length">
+    <div class="table-responsive" *ngIf="Photographers && Photographers.length">
       <table class="table">
         <thead>
           <tr>
-            <th></th>
-            <th>Product</th>
-            <th>Code</th>
-            <th>Available</th>
+            <th>Name</th>
+            <th>Field of Expertise</th>
+            <th>Country</th>
+            <th>Email</th>
             <th>Price</th>
-            <th>5 Star Rating</th>
+            <th>Mobile</th>
+            <th>Rating</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let Prod of filteredProducts">
+          <tr *ngFor="let Prod of filteredPhotographers">
             <td>
-              <img
-                *ngIf="showImage"
-                [src]="Prod.imgUrl"
-                [title]="Prod.Name"
-                [style.width.px]="imgWidth"
-                [style.margin.px]="imgMargin"
-              />
-            </td>
-
-            <td>
-              <a [routerLink]="['/products', Prod.photographerId]">
+              <a href={{Prod.proUrl}}>
                 {{ Prod.Name }}
               </a>
             </td>
+            <td>{{Prod.specialityField}}</td>
 
             <td>{{ Prod.country }}</td>
 
@@ -50,13 +42,14 @@
 
             <td>{{ Prod.price | currency: "USD":"symbol":"1.2-4" }}</td>
 
+            <td>{{ Prod.contactNo }}</td>
+
             <td>
               <pm-star
                 [rating]="Prod.starRating"
                 (ratingClicked)="onRatingClicked($event)"
               ></pm-star>
             </td>
-            -
           </tr>
         </tbody>
       </table>

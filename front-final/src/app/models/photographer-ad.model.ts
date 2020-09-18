@@ -5,8 +5,7 @@ export interface IphotographerAdv {
   country: string;
   email: string;
   price: string;
-  gender: string;
   contactNo: string;
-  imgUrl: string;
+  proUrl: string;
   starRating: number;
 }

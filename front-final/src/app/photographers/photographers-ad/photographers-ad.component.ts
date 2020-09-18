@@ -8,8 +8,6 @@ import { AdProtographersService } from './ad-protographers.service';
 })
 export class PhotographersAdComponent implements OnInit {
   pageTitle: string = 'Scraped Photographers List!';
-  imgWidth: number = 50;
-  imgMargin: number = 2;
   showImage: boolean = true;
   errorMessage: string;
 
@@ -21,25 +19,25 @@ export class PhotographersAdComponent implements OnInit {
 
   set listfilter(value: string) {
     this._listfilter = value;
-    this.filteredProducts = this._listfilter
+    this.filteredPhotographers = this._listfilter
       ? this.performFilter(this._listfilter)
-      : this.products;
+      : this.Photographers;
   }
   onRatingClicked(message: string): void {
     this.pageTitle = 'Scraped Photographers List:' + message;
   }
 
   // tslint:disable-next-line: member-ordering
-  filteredProducts: IphotographerAdv[];
+  filteredPhotographers: IphotographerAdv[];
 
   // tslint:disable-next-line: member-ordering
-  products: IphotographerAdv[] = [];
+  Photographers: IphotographerAdv[] = [];
  
   constructor(private Service: AdProtographersService) {}
 
   performFilter(filterBY: string): IphotographerAdv[] {
     filterBY = filterBY.toLocaleLowerCase();
-    return this.products.filter(
+    return this.Photographers.filter(
       (prod: IphotographerAdv) =>
         prod.country.toLocaleLowerCase().indexOf(filterBY) !== -1 ||
         prod.specialityField.toLocaleLowerCase().indexOf(filterBY) !== -1
@@ -47,10 +45,10 @@ export class PhotographersAdComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.Service.getProducts().subscribe({
-      next: (products) => {
-        this.products = products;
-        this.filteredProducts = this.products;
+    this.Service.getPhotographers().subscribe({
+      next: (Photographers) => {
+        this.Photographers = Photographers;
+        this.filteredPhotographers = this.Photographers;
       },
       error: (err) => (this.errorMessage = err),
     });
