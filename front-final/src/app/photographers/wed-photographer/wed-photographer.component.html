@@ -1,6 +1,7 @@
 <div class="profile-container container">
 
-  <div *ngFor="let photographer of photographers; let i = index"  [routerLink]="['/pro-profile', i]" routerLinkActive="active">
+  <div *ngFor="let photographer of photographers; 
+  let i = index"  [routerLink]="['/pro-profile', i]" routerLinkActive="active">
     <div *ngIf="photographer.specialityField1 ==='true'" class="profile alert alert-warning">
       <p>Name - <span class="badge-warning font-weight-light" style="color: #333333">{{photographer.firstName}} {{photographer.lastName}}</span></p>
       <p class="font-weight-bold">Interest Fields - <span class=" badge-warning">

@@ -1,0 +1,19 @@
+.CustTitle{
+    background-color: #f9bc07;
+    align-content: center;
+    text-align: center;
+    color: #fff;
+}
+.Custfield{
+  padding-left: 5rem;
+  color: #f9bc07;
+  padding: 7px 0;
+  background: transparent;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}

@@ -36,6 +36,8 @@ import {ViewProfileComponent} from './profile/view-profile.component';
 import { PageNumComponent } from './photographers/page-num/page-num.component';
 import { PhotographersAdComponent } from './photographers/photographers-ad/photographers-ad.component';
 import { StarsComponent } from './photographers/stars/stars.component';
+import { NullToWordPipe } from './Shared/null-to-word.pipe';
+
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import { StarsComponent } from './photographers/stars/stars.component';
     ViewProfileComponent,
     PageNumComponent,
     PhotographersAdComponent,
-    StarsComponent
+    StarsComponent,
+    NullToWordPipe,
   ],
   imports: [
     NgbModule,

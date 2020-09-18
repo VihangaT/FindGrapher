@@ -1,18 +1,16 @@
 <div class="card">
-  <div class="card-header">
+  <div class="card-header CustTitle">
     {{ pageTitle }}
   </div>
   <div class="card-body">
     <div class="row">
       <div class="col-md-2">Filter by:</div>
-      <div class="col-md-4">
-        <input type="text" [(ngModel)]="listfilter" />
+      <input class="Custfield" type="text" [(ngModel)]="listfilter" placeholder="Filter By" name="Filter" id='Filter'/>
       </div>
-    </div>
     <div class="row">
-      <div class="col-md-6">
+      <!-- <div class="col-md-6">
         <h4>Filtered by: {{ listfilter }}</h4>
-      </div>
+      </div> -->
     </div>
     <div class="table-responsive" *ngIf="Photographers && Photographers.length">
       <table class="table">
@@ -34,15 +32,16 @@
                 {{ Prod.Name }}
               </a>
             </td>
-            <td>{{Prod.specialityField}}</td>
+            <td>{{Prod.specialityField |nullToWord:'null'}}</td>
 
-            <td>{{ Prod.country }}</td>
+            <td>{{ Prod.country |nullToWord:'null' }}</td>
 
-            <td>{{ Prod.email }}</td>
+            <td>{{ Prod.email |nullToWord:'null' }}</td>
 
-            <td>{{ Prod.price | currency: "USD":"symbol":"1.2-4" }}</td>
+            <td>
+              {{ Prod.price  | currency: "USD":"symbol":"1.2-4" }}</td>
 
-            <td>{{ Prod.contactNo }}</td>
+            <td>{{ Prod.contactNo |nullToWord:'null' }}</td>
 
             <td>
               <pm-star
