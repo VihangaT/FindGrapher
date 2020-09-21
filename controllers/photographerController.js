@@ -429,8 +429,8 @@ exports.sendMail = async (req, res) =>
         let mailOptions = {
             from: process.env.EMAIL,
             to: photoEmail,
-            subject: 'FindGrapher',
-            text: `${name} from ${country} wants to contact with you. \n Email Address :${userEmail}`
+            subject: 'FindGrapher- An client is Waiting For You',
+            text: `${name} from ${country} wants to contact with you. \n Email Address :${userEmail} . Please contact the client as soon as possible`
         };
 
         await transporter.sendMail(mailOptions, function (err, data) {});
