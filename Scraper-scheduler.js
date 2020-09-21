@@ -1,6 +1,6 @@
 const cron = require("node-cron");
 let shell = require("shelljs");
-
+console.log("Scraper-Scheduler Active");
 cron.schedule("0 0 0/12 1 * * *",function(){
 	let timestamp=Date.now();
     console.log("Scheduler Running:",Date);
