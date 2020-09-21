@@ -6,6 +6,7 @@ const cors = require("cors");
 const { mongoose } = require("./db.js"); //db connection
 var photographerRoutes = require("./routes/photographers-routes");
 var userRoutes = require("./routes/users-routes");
+var photographerScrapeRoutes = require("./routes/scraper-routes");
 
 const limiterRegister = Limiter({
   // 20 minutes
@@ -44,6 +45,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use("api/scrapes",photographerScrapeRoutes);
 app.use("/api/photographer", photographerRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api", (req, res) => {
