@@ -1,9 +1,9 @@
 const cron = require("node-cron");
 let shell = require("shelljs");
 console.log("Scraper-Scheduler Active");
-cron.schedule("0 0 0/12 1 * * *",function(){
+cron.schedule("1 * * * * *",function(){
 	let timestamp=Date.now();
-    console.log("Scheduler Running:",Date);
+    console.log("Scheduler Running:",timestamp);
     try {
         if(shell.exec("node scrapers/scraper-ppa.js").code !== 0){
             console.log("Something went wrong in scraper-ppa.js");
@@ -13,9 +13,6 @@ cron.schedule("0 0 0/12 1 * * *",function(){
         }
         if(shell.exec("node scrapers/scraper-shopify.js").code !== 0){
             console.log("Something went wrong scraper-shopify.js");
-        }
-        if(shell.exec("node scrapers/scraper-PeoperHour.js").code !== 0){
-            console.log("Something went wrong scraper-PeoperHour.js");
         }
         if(shell.exec("node scrapers/scraper-freelancerclub.js").code !== 0){
             console.log("Something went wrong scraper-freelancerclub.js");
@@ -58,6 +55,9 @@ cron.schedule("0 0 0/12 1 * * *",function(){
         }
         if(shell.exec("node scrapers/scraper-oc-us.js").code !== 0){
             console.log("Something went wrong scraper-oc-us.js");
+        }
+        if(shell.exec("node scrapers/scraper-PeoperHour.js").code !== 0){
+            console.log("Something went wrong scraper-PeoperHour.js");
         }
         if(shell.exec("node scrapers/scraper-oh-us.js").code !== 0){
             console.log("Something went wrong scraper-oh-us.js");

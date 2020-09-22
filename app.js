@@ -41,11 +41,11 @@ app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, PATCH, PUT, DELETE, OPTIONS"
-  );
+  ); 
   next();
 });
 
-app.use("api/scrapes",photographerScrapeRoutes);
+app.use("/api/scrapes",photographerScrapeRoutes);
 app.use("/api/photographer", photographerRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api", (req, res) => {
