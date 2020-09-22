@@ -1,6 +1,6 @@
 const cron = require("node-cron");
 let shell = require("shelljs");
-console.log("Scraper-Scheduler Active");
+console.log("******************Scraper-Scheduler Active*************");
 cron.schedule("1 * * * * *",function(){
 	let timestamp=Date.now();
     console.log("Scheduler Running:",timestamp);
@@ -14,23 +14,8 @@ cron.schedule("1 * * * * *",function(){
         if(shell.exec("node scrapers/scraper-shopify.js").code !== 0){
             console.log("Something went wrong scraper-shopify.js");
         }
-        if(shell.exec("node scrapers/scraper-freelancerclub.js").code !== 0){
-            console.log("Something went wrong scraper-freelancerclub.js");
-        }
         if(shell.exec("node scrapers/scraper-az-us.js").code !== 0){
             console.log("Something went wrong scraper-az-us.js");
-        }
-        if(shell.exec("node scrapers/scraper-bd.js").code !== 0){
-            console.log("Something went wrong scraper-bd.js");
-        }
-        if(shell.exec("node scrapers/scraper-ca-osmp.js").code !== 0){
-            console.log("Something went wrong scraper-ca-osmp.js");
-        }
-        if(shell.exec("node scrapers/scraper-ca-us.js").code !== 0){
-            console.log("Something went wrong scraper-ca-us.js");
-        }
-        if(shell.exec("node scrapers/scraper-co-ud.js").code !== 0){
-            console.log("Something went wrong scraper-co-ud.js");
         }
         if(shell.exec("node scrapers/scraper-dc.js").code !== 0){
             console.log("Something went wrong scraper-dc.js");
@@ -116,8 +101,23 @@ cron.schedule("1 * * * * *",function(){
         if(shell.exec("node scrapers/scrapper-ch-ch1.js").code !== 0){
             console.log("Something went wrong scrapper-ch-ch1.js");
         }
+        if(shell.exec("node scrapers/scraper-bd.js").code !== 0){
+            console.log("Something went wrong scraper-bd.js");
+        }
+        if(shell.exec("node scrapers/scraper-ca-osmp.js").code !== 0){
+            console.log("Something went wrong scraper-ca-osmp.js");
+        }
+        if(shell.exec("node scrapers/scraper-ca-us.js").code !== 0){
+            console.log("Something went wrong scraper-ca-us.js");
+        }
+        if(shell.exec("node scrapers/scraper-co-ud.js").code !== 0){
+            console.log("Something went wrong scraper-co-ud.js");
+        }
         if(shell.exec("node scrapers/scrapper-ch-ch2.js").code !== 0){
             console.log("Something went wrong scrapper-ch-ch2.js");
+        }
+        if(shell.exec("node scrapers/scraper-freelancerclub.js").code !== 0){
+            console.log("Something went wrong scraper-freelancerclub.js");
         }
     } catch (error) {
         console.log("Error in scheduler",error);
