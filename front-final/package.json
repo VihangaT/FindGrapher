@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.14",
     "@ng-bootstrap/ng-bootstrap": "^5.3.1",
     "angular-font-awesome": "^3.1.2",
+    "bl": "^4.0.3",
     "bootstrap": "^4.5.0",
     "font-awesome": "^4.7.0",
     "node-forge": "^0.10.0",
