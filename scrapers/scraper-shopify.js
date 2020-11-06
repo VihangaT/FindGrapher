@@ -1,5 +1,6 @@
 const puppeteer = require("puppeteer");
-
+const { mongoose } = require("../db.js");
+const { ScrapedPhotographer } = require("../models/scrapedPhotographer");
 (async function main() {
   try {
     const browser = await puppeteer.launch({ headless: true });
@@ -111,7 +112,26 @@ const puppeteer = require("puppeteer");
         console.log("Location", Location);
         console.log("Price:", Price);
         console.log("Rating", Rating);
-        // console.log("URL:",photographer.ElementHandle._mainFrame._url);
+       
+
+        try {
+          let scraper = {
+            Name: Name,
+            Location: Location,
+            Email: "null",
+            ContactNo: "null",
+            Expertise: Expertise,
+            Price:Price,
+            ProfileURL: "null",
+            Rating: Rating,
+          };
+  
+          console.log(scraper);
+          await new ScrapedPhotographer(scraper).save();
+          console.log("Saved to database Successfully");
+        } catch (error) {
+          console.log(error);
+        }
       }
 
       if (NumberofPages != i) {

@@ -22,9 +22,7 @@ import { ArchiPhotographerComponent } from './photographers/archi-photographer/a
 import { TravelPhotographerComponent } from './photographers/travel-photographer/travel-photographer.component';
 import {ViewProfileComponent} from './profile/view-profile.component';
 import { PhotographersAdComponent } from './photographers/photographers-ad/photographers-ad.component';
-
 const routes: Routes = [
-
   { path: 'welcome',pathMatch: 'full', component: HomeComponent },
   { path: 'register', component: RegisterComponent,
     children: [
@@ -63,6 +61,5 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
-}) 
+})
 export class AppRoutingModule { }
- 

@@ -5,9 +5,6 @@ cron.schedule("1 * * * * *",function(){
 	let timestamp=Date.now();
     console.log("Scheduler Running:",timestamp);
     try {
-        if(shell.exec("node scrapers/scraper-ppa.js").code !== 0){
-            console.log("Something went wrong in scraper-ppa.js");
-        }
         if(shell.exec("node scrapers/scraper-us-osmp.js").code !== 0){
             console.log("Something went wrong scraper-us-osmp.js");
         }
@@ -34,6 +31,9 @@ cron.schedule("1 * * * * *",function(){
         }
         if(shell.exec("node scrapers/scraper-la-us.js").code !== 0){
             console.log("Something went wrong scraper-la-us.js");
+        }
+        if(shell.exec("node scrapers/scraper-ppa.js").code !== 0){
+            console.log("Something went wrong in scraper-ppa.js");
         }
         if(shell.exec("node scrapers/scraper-NY-osamp.js").code !== 0){
             console.log("Something went wrong scraper-NY-osamp.js");

@@ -29,5 +29,5 @@ const ScrapedphotographerSchema = new Schema({
 
 //photographerSchema.plugin(uniqueValidator);
 
-const ScrapedPhotographer = mongoose.model('ScrapedPhotographer', ScrapedphotographerSchema);
+const ScrapedPhotographer = mongoose.model('ScrapedPhotographers', ScrapedphotographerSchema);
 module.exports = { ScrapedPhotographer };

@@ -1,4 +1,7 @@
 const puppeteer = require("puppeteer");
+const { mongoose } = require("../db.js");
+const { ScrapedPhotographer } = require("../models/scrapedPhotographer");
+
 
 (async function main() {
   try {
@@ -47,30 +50,58 @@ const puppeteer = require("puppeteer");
         (skill) => skill.innerText.substring(12)
       );
 
-      let phoneNo="";
-      if ((await photographer.$('[class="phone"]')) !== null){
+      let phoneNo = "";
+      if ((await photographer.$('[class="phone"]')) !== null) {
         phoneNo = await photographer.$eval('[class="phone"]', (PhNum) =>
-        PhNum.innerText.substring(6)
-      );
+          PhNum.innerText.substring(6)
+        );
       }
-       
-      let Email="";
-      if((await photographer.$('[class="email"]')) !== null){
+
+      let Email = "";
+      if ((await photographer.$('[class="email"]')) !== null) {
         Email = await photographer.$eval('[class="email"]', (email) =>
-        email.innerText.substring(7)
-      );
+          email.innerText.substring(7)
+        );
       }
-      
+
       console.log(photographer);
       console.log("Name:", Name);
       console.log("Location:", Location);
       console.log("Expertise:", Expertise);
       console.log("Phone NO:", phoneNo);
       console.log("Email:", Email);
-     
+
+      // Name: { type: String},
+      // Location: { type: String},
+      // Email: { type: String},
+      // ContactNo:{ type: String},
+      // Expertise: { type: String },
+      // Price: { type: String },
+      // ProfileURL: { type: String },
+      // Rating: { type: String },
+      try {
+        let scraper = {
+          Name: Name,
+          Location: Location,
+          Email: Email,
+          ContactNo: phoneNo,
+          Expertise: Expertise,
+          Price:"null",
+          ProfileURL: "null",
+          Rating: "null",
+        };
+
+        console.log(scraper);
+        await new ScrapedPhotographer(scraper).save();
+        console.log("Saved to database Successfully");
+      } catch (error) {
+        console.log(error);
+      }
     }
 
-    console.log("*************Scraping is Completed***************************");
+    console.log(
+      "*************Scraping is Completed***************************"
+    );
     await browser.close();
   } catch (ex) {
     console.log("Error Prompted", ex);

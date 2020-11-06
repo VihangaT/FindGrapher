@@ -2,7 +2,8 @@ const request = require("request-promise");
 const cheerio = require("cheerio");
 const fs = require("fs");
 const json2csv = require("json2csv").Parser;
-
+const { mongoose } = require("../db.js");
+const { ScrapedPhotographer } = require("../models/scrapedPhotographer");
 const URLS = [
   "https://www.flytographer.com/vacation-photographers/your-vacation-photographer-in-paris-meet-krystal/",
   "https://www.flytographer.com/vacation-photographers/your-vacation-photographer-in-paris-meet-olga/",
@@ -56,9 +57,21 @@ const URLS = [
       });
   }
   try {
-    const j2csv = new json2csv();
-    const csv = j2csv.parse(GrapherData);
-    fs.writeFileSync("./GrapherData.csv", csv, "utf-8");
+    let scraper = {
+      Name: Name,
+      Location: Location,
+      Email: "null",
+      ContactNo: "null",
+      Expertise: Expertise,
+      Price:Price,
+      ProfileURL: main,
+      Rating: Rating,
+    };
+
+    console.log(scraper);
+    await new ScrapedPhotographer(scraper).save();
+    console.log("Saved to database Successfully");
+  
   } catch (ex) {
     console.log(ex);
   }
